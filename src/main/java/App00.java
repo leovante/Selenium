@@ -5,7 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 //https://www.youtube.com/watch?v=zka-SN9yNt4   1.25.20
 public class App00 {
+
     public static void main(String[] args) throws Exception {
+        System.setProperty("webdriver.chrome.driver", "D://Develop//GitHub//chromedriver.exe/");
         WebDriver webDriver = new ChromeDriver();
 //WebDriver webDriver = new FirefoxDriver();
         webDriver.get("http://it-ebooks.info/");
@@ -30,7 +32,5 @@ public class App00 {
 
         webDriver.quit(); //закрывает страничку
 //webDriver.close(); закрывет процесс
-
     }
 }
-
