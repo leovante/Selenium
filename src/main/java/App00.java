@@ -1,15 +1,19 @@
-import org.openqa.selenium.webdriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 //https://www.youtube.com/watch?v=zka-SN9yNt4   1.25.20
 public class App00 {
     public static void main(String[] args) throws Exception {
+        System.setProperty("webdriver.chrome.driver", "/chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
 //WebDriver webDriver = new FirefoxDriver();
         webDriver.get("http://it-ebooks.info/");
         System.out.println(webDriver.getTitle());
-        System.out.println(webDriver.getCurrentURL());
+        System.out.println(webDriver.getCurrentUrl());
 
-        webDriver.findElement(By.cssSeelctor("input[value='title']")).click();
+        webDriver.findElement(By.cssSelector("input[value='title']")).click();
         webDriver.findElement(By.id("q")).clear();
 
         webDriver.findElement(By.id("q")).sendKeys("Automation");//высокая скорость, уникальность
