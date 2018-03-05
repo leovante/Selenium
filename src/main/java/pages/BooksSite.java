@@ -12,6 +12,7 @@ public class BooksSite {
     public MainPage mainPage() {
         return new MainPage(webDriver);
     }
+
     public SearchResultsPage searchResultsPage(){
         return new SearchResultsPage(webDriver);
     }
@@ -19,4 +20,5 @@ public class BooksSite {
     public BookInfoPage bookinfoPage(){
         return new BookInfoPage();
     }
+
 }
