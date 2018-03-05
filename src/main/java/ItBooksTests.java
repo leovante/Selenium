@@ -26,7 +26,7 @@ public class ItBooksTests {
         mainPage.switchSearchToTitle();
 
         System.out.println("Step 2: Enter search phrase");
-        mainPage.enterSearchableText("Automation");
+        mainPage.enterSearchableText("automation");
 
         System.out.println("Step 3: Click Search Buton");
         mainPage.clickSearchButton();
