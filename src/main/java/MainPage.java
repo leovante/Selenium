@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,10 +8,10 @@ public class MainPage {
     private WebDriver webDriver;
     private WebDriverWait wait;
 
-    @FindBy(css = "input[type='title']")
+    @FindBy(css = "input[value='title']")
     WebElement titleRadionBtn;
 
-    @FindBy(id= "q")
+    @FindBy(id = "q")
     WebElement searchInpuField;
 
     @FindBy(css = "input[type='submit']")
@@ -31,14 +30,9 @@ public class MainPage {
     public void enterSearchableText(String text) {
         searchInpuField.clear();
         searchInpuField.sendKeys(text);
-        webDriver.findElement(By.cssSelector("input[type='submit']")).click();
     }
 
-    public void  clickSearchButton(){
+    public void clickSearchButton() {
         searchButton.click();
     }
-
-
-
-
 }

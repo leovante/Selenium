@@ -14,8 +14,8 @@ public class ItBooksTests {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "E:/YandexDisk/Программирование/GitHub/Selenium/chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "E:/YandexDisk/Programming/GitHub/Selenium/chromedriver.exe");
+        webDriver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(webDriver, 30, 500);
 
         mainPage = new MainPage(webDriver);
@@ -26,7 +26,7 @@ public class ItBooksTests {
         mainPage.switchSearchToTitle();
 
         System.out.println("Step 2: Enter search phrase");
-        mainPage.enterSearchableText("Automaion");
+        mainPage.enterSearchableText("Automation");
 
         System.out.println("Step 3: Click Search Buton");
         mainPage.clickSearchButton();
@@ -36,12 +36,12 @@ public class ItBooksTests {
     @Test
     public void testSearshBookUrl() {
         System.out.println("Check url");
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("search/?q=Automation&type=title"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("search/?q=automation&type=title"));
     }
 
     @Test
     public void testBooksSearch() {
-        System.out.println("Check search  results");
+        System.out.println("Check search results");
         Assert.assertTrue(
                 webDriver.findElement(By.className("top"))
                         //.findElement(By.tagName("table")) //� �������� ��� ����� ���������
