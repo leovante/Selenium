@@ -1,3 +1,4 @@
+// eto pattern proektirovania facad
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -5,12 +6,12 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BooksSite;
 
 public class ItBooksTests {
     WebDriver webDriver;
-    MainPage mainPage;
+    BooksSite website;
 
     @Before
     public void setUp() {
@@ -18,19 +19,21 @@ public class ItBooksTests {
         webDriver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(webDriver, 30, 500);
 
-        mainPage = new MainPage(webDriver);
+        website = new BooksSite(webDriver);
 
         webDriver.get("http://it-ebooks.info/");
 
         System.out.println("Step 1: Switch to search by title");
-        mainPage.switchSearchToTitle();
+        website.mainPage().switchSearchToTitle();
 
         System.out.println("Step 2: Enter search phrase");
-        mainPage.enterSearchableText("automation");
+        website.mainPage().enterSearchableText("automation");
 
         System.out.println("Step 3: Click Search Buton");
-        mainPage.clickSearchButton();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("top")));
+        website.mainPage().clickSearchButton();
+
+        System.out.println("Step 4: Wait For search Results");
+        website.searchResultsPage().waitForSearchResults();
     }
 
     @Test
