@@ -5,9 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 //https://www.youtube.com/watch?v=zka-SN9yNt4   1.25.20
 public class App00 {
-
     public static void main(String[] args) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "D://Develop//GitHub//chromedriver.exe/");
+        System.setProperty("webdriver.chrome.driver", "E:/YandexDisk/Programming/GitHub/Selenium/chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
 //WebDriver webDriver = new FirefoxDriver();
         webDriver.get("http://it-ebooks.info/");
@@ -21,7 +20,9 @@ public class App00 {
         webDriver.findElement(By.id("q")).sendKeys(Keys.RETURN);//типо нажали на энтер
 //а ещё можно через нажатие кнопочки search на странице через cssSelector
 //webDriver.findElement(By.cssSelector("input[type='submit']")).click();
-        Thread.sleep(20000);
+        Thread.sleep(5000);
+
+
 //webDriver.findElement(By.name("q"));//практически тоже самое что id
 //webDriver.findElement(By.className("q"));//классы повторяются, если состоит из двух и более слов с пробелами, то искать с css селекторами ".q.a.v" это ниже
 //webDriver.findElement(By.cssSelector("q")); это лучше, когда нет ид или нейма
@@ -32,5 +33,7 @@ public class App00 {
 
         webDriver.quit(); //закрывает страничку
 //webDriver.close(); закрывет процесс
+
     }
 }
+
