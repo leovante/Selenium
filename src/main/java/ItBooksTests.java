@@ -31,10 +31,9 @@ public class ItBooksTests {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "E:/YandexDisk/Programming/GitHub/Selenium/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         webDriver = new ChromeDriver();
         wait = new WebDriverWait(webDriver, 30, 500);
-
         website = new BooksSite(webDriver);
 
         webDriver.get("http://it-ebooks.info/");
@@ -45,7 +44,7 @@ public class ItBooksTests {
         System.out.println("Step 2: Enter search phrase");
         website.mainPage().enterSearchableText("automation");
 
-        System.out.println("Step 3: Click Search Buton");
+        System.out.println("Step 3: Click Search Button");
         website.mainPage().clickSearchButton();
 
         System.out.println("Step 4: Wait For search Results");
@@ -74,7 +73,7 @@ public class ItBooksTests {
         website.searchResultsPage().openBookFromResultsBy("Home Automation with Intel Galileo");
 
         System.out.println("Step 6: Wait for page load");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1[itemrop='name'")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1[itemrop='name']")));
     }
 
     @After
