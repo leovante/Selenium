@@ -73,7 +73,7 @@ public class ItBooksTests {
         website.searchResultsPage().openBookFromResultsBy("Home Automation with Intel Galileo");
 
         System.out.println("Step 6: Wait for page load");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1[itemrop='name']")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1[itemprop='name']")));
     }
 
     @After
